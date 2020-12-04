@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <!-- use dots for session on front end -->
+    <h1>Counter</h1>
+    <h2>Welcome {{request.session.visit}}</h2>
+    <h2>Session count is:{{request.session.tommy}}</h2>
+    <form action="process_form" method="post">
+        {% csrf_token %}
+        <select name="jobs">
+            <option value="f">Farmer</option>
+
+
+        </select>
+        <br><br>
+        <button type="submit">APPLY</button>
+
+    </form>
+    
+    <form action="destroy_session" method="post">
+        {% csrf_token %}
+        <select name="jobs">
+        <button type="submit">Clear Session</button>    
+
+
+        </select>
+        <br><br>
+        <button type="submit">Clear Session</button>
+</body>
+</html>
